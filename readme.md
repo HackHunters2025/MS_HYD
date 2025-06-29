@@ -72,13 +72,13 @@ Edit
 
 ## 🧑‍💻 Contributors
 
-| Name                     | Role                            |
-|--------------------------|----------------------------------|
-| **Soumyadeep Sarkar**    | Developer / UI Engineer         |
-| **Chinmayi Kallurmath**  | AI Flow Designer / UX Lead      |
-| **Rishabh Roy**          | Research & Integration          |
-| **Sindhuja**             | Frontend Enhancer / QA          |
-| **OpenAI / Omnidimension** | AI Widget Backend Support     |
+| Name                     | Role                            | Github Profile |
+|--------------------------|----------------------------------|----------------|
+| **Soumyadeep Sarkar**    | Developer / UI Engineer         |                  |
+| **Chinmayi Kallurmath**  | AI Flow Designer / UX Lead      |                  |
+| **Rishabh Roy**          | Research & Integration          |                  |
+| **Sindhuja**             | Frontend Enhancer / QA          |                  |
+| **OpenAI / Omnidimension** | AI Widget Backend Support     |                  |
 
 ---
 
