@@ -1,0 +1,45 @@
+/* styleguide.css */
+
+
+/* 🎨 Colors */
+
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #f4f4f4;
+    --danger-color: #e74c3c;
+    --success-color: #27ae60;
+    --text-dark: #222;
+    --text-light: #888;
+    --background: #ffffff;
+    --border-color: #ddd;
+    --hover-shadow: rgba(0, 0, 0, 0.1);
+}
+
+
+/* 🧱 Typography */
+
+:root {
+    --font-base: 'Segoe UI', sans-serif;
+    --font-size-base: 16px;
+    --font-size-heading: 24px;
+    --line-height-base: 1.5;
+}
+
+
+/* 📦 Spacing */
+
+:root {
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+}
+
+
+/* 🌗 Shadows */
+
+:root {
+    --shadow-soft: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.1);
+}

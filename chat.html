@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Edutech AI Widgets</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- Sidebar for AI Agent Buttons -->
+    <div class="sidebar">
+        <h2>AI Tools</h2>
+        <div class="widget-buttons">
+            <button class="agent-button" onclick="load('87948b5a618a08aab9b947d4e75acd65')">
+                <img src="img/concept-coach.png" alt="Concept Coach" />
+                <span>Concept Coach</span>
+            </button>
+            <button class="agent-button" onclick="load('1dabb22bc64be21ed4d9988c1915fe24')">
+                <img src="img/dpp-master.png" alt="DPP Master" />
+                <span>DPP Master</span>
+            </button>
+            <button class="agent-button" onclick="load('3cd44c1a7052931e82fee78a7e44542e')">
+                <img src="img/exam-mentor.png" alt="Exam Mentor Bot" />
+                <span>Exam Mentor Bot</span>
+            </button>
+            <button class="agent-button" onclick="load('91945ad37e091d60384a7ffa7c177e46')">
+                <img src="img/mindease.png" alt="MindEase" />
+                <span>MindEase</span>
+            </button>
+            <button class="agent-button" onclick="load('72b976b863d5f30dd6e7b8476569443d')">
+                <img src="img/smart-scheduler.png" alt="Smart Scheduler" />
+                <span>Smart Scheduler</span>
+            </button>
+            <button class="agent-button" onclick="load('8ef9b4125d3969e3f5c936ec3d742412')">
+                <img src="img/progress-analyzer.png" alt="Progress Analyzer" />
+                <span>Progress Analyzer</span>
+            </button>
+            <button class="agent-button" onclick="load('f32ae6752dfb8605c12453fc8baef578')">
+                <img src="img/career-pathfinder.png" alt="Career Pathfinder" />
+                <span>Career Pathfinder</span>
+            </button>
+            <button class="agent-button" onclick="load('5be42f4043bf7c90cfb10c92d5d1f534')">
+                <img src="img/parent-connect.png" alt="ParentConnect AI" />
+                <span>ParentConnect AI</span>
+            </button>
+            <button class="agent-button" onclick="load('92934105a8b46555654e5de46eb4ed68')">
+                <img src="img/sleeptrainer.png" alt="SleepTrainer" />
+                <span>SleepTrainer</span>
+            </button>
+            <button class="agent-button" onclick="load('aad4982ea1ad391e133449cedf3b59fe')">
+                <img src="img/pyq-guru.png" alt="PYQ Guru" />
+                <span>PYQ Guru</span>
+            </button>
+            <button class="agent-button" onclick="load('5a6a8d98a8afc37bdeeabf57e199d2df')">
+                <img src="img/langswitch.png" alt="LangSwitch" />
+                <span>LangSwitch</span>
+            </button>
+            <button class="agent-button" onclick="load('204edcebce08d07aa14451cf9320e228')">
+                <img src="img/quizmaster.png" alt="QuizMaster" />
+                <span>QuizMaster</span>
+            </button>
+            <button class="agent-button" onclick="load('cbe23689ed635964de37ec59c338b08f')">
+                <img src="img/doubtsolver.png" alt="DoubtSolver AI" />
+                <span>DoubtSolver AI</span>
+            </button>
+            <button class="agent-button" onclick="load('3563ad542129ae933469898af462182a')">
+                <img src="img/notification.png" alt="Notification" />
+                <span>Notification</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+        <div class="background-image">
+            <div class="overlay">
+                <h1>Edutech</h1>
+                <p class="ai-description">
+                    Artificial Intelligence (AI) Studies is an interdisciplinary academic and practical field that
+                    focuses on the design, development, and ethical deployment of intelligent machines and systems. It
+                    involves the study of how computers can be made to perform
+                    tasks that normally require human intelligence, such as learning, reasoning, problem-solving,
+                    perception, and language understanding.
+                </p>
+            </div>
+        </div>
+        <div id="widget-container"></div>
+    </div>
+
+
+    <!-- Script for Loading Widget -->
+
+    <script>
+        let currentAgentKey = null;
+
+        function load(secretKey) {
+            function loadAgent(secretKey) {
+                // If the same agent is clicked again, do nothing
+                if (currentAgentKey === secretKey) return;
+
+                // Update the currently loaded agent
+                currentAgentKey = secretKey;
+
+                // Remove previous widget script if it exists
+                const existingScript = document.getElementById('omnidimension-web-widget');
+                if (existingScript) {
+                    location.reload();
+                    existingScript.remove();
+                    console.log("Removed the widget: " + existingScript);
+
+
+                }
+
+                loadAgent(secretKey);
+                console.log("Loaded agent again");
+
+                // Remove existing iframe/widget from the DOM (cleanup)
+                const iframes = document.querySelectorAll('iframe');
+                iframes.forEach((frame) => {
+                    if (frame.src.includes("omnidim.io")) {
+                        frame.remove();
+                    }
+                });
+
+                // Clear container in case widget uses a div
+                const widgetContainer = document.getElementById('widget-container');
+                widgetContainer.innerHTML = '';
+
+                // Add new script
+                const script = document.createElement('script');
+                script.id = 'omnidimension-web-widget';
+                script.async = true;
+                script.src = `https://backend.omnidim.io/web_widget.js?secret_key=${secretKey}`;
+                script.reload = () => {
+                    console.log("Agent loaded successfully");
+                    // Optional: call window.initAgent(secretKey) or similar
+                };
+                document.body.appendChild(script);
+            }
+            //call directly after removing 
+            loadAgent(secretKey);
+
+        }
+    </script>
+</body>
+
+</html>
